@@ -1,9 +1,10 @@
 import os
 from pathlib import Path
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = "django-insecure-fpqenn)lu)k1=d+(6lqn^^@ve#qgl^a=(^$ucth=b4*j09nv3l"
+SECRET_KEY = config("SECRET_KEY")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -15,7 +16,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

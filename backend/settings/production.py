@@ -1,6 +1,7 @@
+from typing import cast
 from .base import *
 
-DEBUG = False
+DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = ["ip-address", "website"]
 
@@ -22,10 +23,10 @@ AUTH_PASSWORD_VALIDATORS = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postfresql_psycopg2",
-        "NAME": "db-name",
-        "USER": "db-user-name",
-        "PASSWORD": "db-password",
-        "HOST": "localhost",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST"),
         "PORT": "",
     }
 }
