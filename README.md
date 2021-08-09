@@ -30,7 +30,7 @@ Activate the virtual environment
 Install the requirements.txt
 
 ```bash
-  python3 install -r requirements.txt
+  pip install -r requirements.txt
 ```
 
 ### To rename the project run
