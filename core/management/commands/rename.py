@@ -15,8 +15,13 @@ class Command(BaseCommand):
 
         # Logic to rename the project
 
-        files_to_rename = ["backend/settings/base.py", "demo/wsgi.py", "manage.py"]
-        folder_to_rename = "demo"
+        files_to_rename = [
+            "backend/settings/base.py",
+            "backend/asgi.py",
+            "backend/wsgi.py",
+            "manage.py",
+        ]
+        folder_to_rename = "backend"
 
         for f in files_to_rename:
             with open(f, "r") as file:
